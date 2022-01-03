@@ -1,18 +1,23 @@
 <!--
  * @Description:
  * @Autor: 杨自强
- * @Date: 2021-12-31 11:16:34
+ * @Date: 2021-12-31 11:51:52
  * @LastEditors: 杨自强
- * @LastEditTime: 2021-12-31 14:07:15
+ * @LastEditTime: 2022-01-03 14:54:17
 -->
+
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld @count="handleGetCount"/>
+  <div>
+    count:{{demoMoule.count}}
+  </div>
+  <HelloWorld @count="handleGetCount" />
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "./components/HelloWorld.vue";
+import { Options, Vue } from 'vue-class-component';
+import HelloWorld from './components/HelloWorld.vue';
+import { DemoModule } from '@/store/modules/demo';
 
 @Options({
   components: {
@@ -20,8 +25,12 @@ import HelloWorld from "./components/HelloWorld.vue";
   },
 })
 export default class App extends Vue {
+  get demoMoule() {
+    return DemoModule;
+  }
+
   handleGetCount(value: string) {
-    console.log(value)
+    console.log(value);
   }
 }
 </script>
