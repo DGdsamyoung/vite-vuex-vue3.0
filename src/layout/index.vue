@@ -1,23 +1,22 @@
 <!--
  * @Description:
  * @Autor: 杨自强
- * @Date: 2021-12-31 11:51:52
+ * @Date: 2022-04-27 09:31:46
  * @LastEditors: 杨自强
 -->
 
 <template>
-    <router-view />
+  <div class="l-layout c-w-100">111</div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 @Options({})
-export default class App extends Vue {
-
-}
+export default class layout extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-
+.l-layout {
+  color:$gpStoreLightGrey;
+}
 </style>
-
