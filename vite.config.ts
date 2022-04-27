@@ -3,7 +3,7 @@
  * @Autor: 杨自强
  * @Date: 2021-12-31 11:51:52
  * @LastEditors: 杨自强
- * @LastEditTime: 2022-01-03 16:07:48
+ * @LastEditTime: 2022-04-27 11:32:35
  */
 const path = require('path');
 import { defineConfig } from 'vite';
@@ -16,6 +16,13 @@ export default defineConfig({
     // 配置路径别名
     alias: {
       '@': path.resolve(__dirname, './src'),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "./src/style/base.scss";',
+      },
     },
   },
   server:{
